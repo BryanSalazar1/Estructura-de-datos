@@ -1,0 +1,41 @@
+class Nodo:
+    def __init__(self, valor):
+        self.valor = valor
+        self.izquierda = None
+        self.derecha = None
+
+def construir_arbol():
+    # Construir el árbol con los valores A, B, C, X, D, E, F
+    a = Nodo('A')
+    b = Nodo('B')
+    c = Nodo('C')
+    x = Nodo('X')
+    d = Nodo('D')
+    e = Nodo('E')
+    f = Nodo('F')
+
+    # Asignar las relaciones del árbol
+    x.izquierda = a
+    x.derecha = b
+    c.izquierda = x
+    c.derecha = d
+    f.izquierda = c
+    f.derecha = e
+
+    return f  # El nodo raíz del árbol
+
+def preorden(nodo):
+    if nodo:
+        print(nodo.valor, end="")
+        preorden(nodo.izquierda)
+        preorden(nodo.derecha)
+
+def cifrar(expresion):
+    arbol = construir_arbol()
+    preorden(arbol)
+
+# Ejemplo de uso
+cadena_original = "ABCXDEF"
+print("Cadena original:", cadena_original)
+print("Cadena cifrada:")
+cifrar(cadena_original)

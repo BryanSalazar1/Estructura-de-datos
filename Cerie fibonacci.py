@@ -10,7 +10,6 @@ def fib(num, a, b, x, list):
         fib(num, a, b, x, list)
     
 
-
 # PRINCIPAL--
         #aqui de definen variables tambien se asigna un rango de numeros que se mostraran
 print("Escribe un rango")

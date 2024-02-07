@@ -1,0 +1,27 @@
+class Nodo:
+    def __init__(self):
+        self.val = None
+        self.next = None
+
+def Lista():
+    e = [1, 2, 3, 4, 5, 6, 7]
+
+    head = Nodo()
+    curr = head
+    i = 0
+    while i < len(e):
+        curr.val = e[i]
+     
+        curr.next = Nodo()
+        curr = curr.next
+        i += 1
+
+    return head
+
+print("Lista de nodos:")
+
+head = Lista()
+curr = head
+while curr is not None:
+    print(curr.val)
+    curr = curr.next
